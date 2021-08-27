@@ -54,6 +54,7 @@ html body header .headerElementsContainer .hamburgerMenu {
 html body header .headerElementsContainer h1 {
   font-family: "Mrs Saint Delafield", cursive;
   font-size: 3.2rem;
+  padding-top: 1rem;
 }
 html body header .headerElementsContainer nav ul li {
   margin: 0 1.4rem;
