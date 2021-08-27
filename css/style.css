@@ -126,14 +126,17 @@ html body header .headerElementsContainer nav ul li a:hover {
     border-radius: 1rem;
   }
   html body header .headerElementsContainer nav ul {
+    position: relative;
     text-align: center;
   }
   html body header .headerElementsContainer nav ul li {
     display: block;
-    margin: 2rem;
   }
   html body header .headerElementsContainer nav ul li a {
+    display: block;
+    margin: 2rem 0;
     color: #595C69;
+    font-size: 1.8rem;
   }
   html body header .headerElementsContainer .isOpen {
     display: block;
