@@ -1,0 +1,218 @@
+$fontMontserrat: 'Montserrat', sans-serif;; 
+$fontDelafield:'Mrs Saint Delafield', cursive;
+
+$bgcolor1: white;
+$bgcolor2:#FFF8F2;
+$bgcolor3:#EAEAEA;
+$ButtonAccent: #FFBF9D;
+$buttonPrimary:#595C69;
+$subText:#9FA1AA;
+$textColor:#303036;
+$boxShadow:#0003;
+
+
+$fw1:300;
+$fw2:400;
+$fw3:500;
+$fw4:600;
+
+$fsText:1.5rem;
+$fsH1:2.6rem;
+$fsH2:1.8rem;
+$fsSubText:1.2rem;
+$fsSmall:1.4rem;
+$fsnormal:1.8rem;
+$fsBig:3.2rem;
+
+
+$maxWidth:144rem;
+
+//Simple Reset
+*,*::after,*::before { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//Main styling 
+html { 
+    font-size: 10px;
+    font-weight: $fw3;
+    font-family: $fontMontserrat;
+    //? usning html selectors to get a lot done with as little css as possible
+
+    a { 
+        text-decoration: none;
+        color: $subText;
+        font-size: $fsText;
+
+    }
+
+    p { 
+        font-size: $fsText;
+    }
+    h1 {  
+        font-size: $fsH1;
+      } 
+
+    h2 { 
+        font-size: $fsH2;
+    }
+    .subtext { 
+        font-size: $fsSubText;
+    }
+
+    li { 
+        display: inline-block;
+        list-style-type: none;
+    }
+    div  { 
+        display: inline-block;
+        width: 100%;
+    }
+
+
+    body { 
+        header { 
+            margin-top: 1rem;
+            box-shadow: $boxShadow 0px 8px 24px;
+            width: 100%;
+
+
+            .headerElementsContainer { 
+                display: flex;
+                max-width: $maxWidth;
+                min-height: 8rem ;
+                align-items: center;
+                justify-content: space-between;
+                width: clamp(16rem, 90vw, 144rem);
+                margin: 0 auto;
+
+                .hamburgerMenu { 
+                    display: none;
+                }
+
+                h1 { 
+                    font-family: $fontDelafield;
+                    font-size: $fsBig;
+                }
+                nav { 
+
+                    ul { 
+                        li { 
+                            margin: 0 1.4rem;
+                            font-weight: $fw4;
+                            
+                            a { 
+                                &:hover{ 
+                                    color: $textColor;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+@media screen and(max-width:700px) {
+    html { 
+        body { 
+            header { 
+                .headerElementsContainer { 
+                    position: relative;
+                    .hamburgerMenu { 
+                        display: flex;
+                        position: relative;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 3.2rem;
+                        height: 2.5rem;
+                    
+                        span { 
+                            position: absolute;
+                            width: 3.2rem;
+                            height: 0.5rem;
+                            background-color: $textColor;
+                            border-radius: 0.5rem;
+                            transition: background 0.1s ease-in-out, transform 0.2s ease-in-out;
+                        
+                            &::after, &::before { 
+                            content: '';
+                            position: absolute;
+                            width: 3.2rem;
+                            height: 0.5rem;
+                            background-color: $textColor;
+                            border-radius: 0.5rem;
+                            transition: opacity 0.1s ease-in-out, transform 0.2s ease-in-out;
+                        }
+
+                        &::before { 
+                            transform: translateY(-0.9rem);
+                        }
+
+                        &::after { 
+                            transform: translateY(0.9rem);
+                        }
+
+                        
+                        }
+                      
+                        input {  
+                            z-index: 1;
+                            display: block;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            cursor: pointer;
+                        
+                            &:checked ~ span{ 
+                                    background-color:transparent;
+                            }
+
+                            &:checked ~ span::before { 
+                                transform: rotate(45deg);
+                            }
+                            &:checked ~ span::after { 
+                                transform: rotate(-45deg);
+                            }
+                        }
+                   
+                       
+                    }
+
+                    
+                    nav { 
+                        display: none;
+                        position: absolute;    
+                        width: 100%;
+                        margin-top: 30rem;
+                        background-color: $bgcolor3;
+                        border-radius: 1rem;
+                        ul { 
+                            text-align: center;
+                            li { 
+                                display: block;
+                                margin: 2rem;
+                                a { 
+                                    
+                                    color: $buttonPrimary;
+                                }
+                            }
+                        }
+                    }
+                    .isOpen{ 
+                        display: block;
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+}

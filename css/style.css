@@ -1,0 +1,143 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+html a {
+  text-decoration: none;
+  color: #9FA1AA;
+  font-size: 1.5rem;
+}
+html p {
+  font-size: 1.5rem;
+}
+html h1 {
+  font-size: 2.6rem;
+}
+html h2 {
+  font-size: 1.8rem;
+}
+html .subtext {
+  font-size: 1.2rem;
+}
+html li {
+  display: inline-block;
+  list-style-type: none;
+}
+html div {
+  display: inline-block;
+  width: 100%;
+}
+html body header {
+  margin-top: 1rem;
+  box-shadow: #0003 0px 8px 24px;
+  width: 100%;
+}
+html body header .headerElementsContainer {
+  display: flex;
+  max-width: 144rem;
+  min-height: 8rem;
+  align-items: center;
+  justify-content: space-between;
+  width: clamp(16rem, 90vw, 144rem);
+  margin: 0 auto;
+}
+html body header .headerElementsContainer .hamburgerMenu {
+  display: none;
+}
+html body header .headerElementsContainer h1 {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: 3.2rem;
+}
+html body header .headerElementsContainer nav ul li {
+  margin: 0 1.4rem;
+  font-weight: 600;
+}
+html body header .headerElementsContainer nav ul li a:hover {
+  color: #303036;
+}
+
+@media screen and (max-width: 700px) {
+  html body header .headerElementsContainer {
+    position: relative;
+  }
+  html body header .headerElementsContainer .hamburgerMenu {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 3.2rem;
+    height: 2.5rem;
+  }
+  html body header .headerElementsContainer .hamburgerMenu span {
+    position: absolute;
+    width: 3.2rem;
+    height: 0.5rem;
+    background-color: #303036;
+    border-radius: 0.5rem;
+    transition: background 0.1s ease-in-out, transform 0.2s ease-in-out;
+  }
+  html body header .headerElementsContainer .hamburgerMenu span::after, html body header .headerElementsContainer .hamburgerMenu span::before {
+    content: "";
+    position: absolute;
+    width: 3.2rem;
+    height: 0.5rem;
+    background-color: #303036;
+    border-radius: 0.5rem;
+    transition: opacity 0.1s ease-in-out, transform 0.2s ease-in-out;
+  }
+  html body header .headerElementsContainer .hamburgerMenu span::before {
+    transform: translateY(-0.9rem);
+  }
+  html body header .headerElementsContainer .hamburgerMenu span::after {
+    transform: translateY(0.9rem);
+  }
+  html body header .headerElementsContainer .hamburgerMenu input {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  html body header .headerElementsContainer .hamburgerMenu input:checked ~ span {
+    background-color: transparent;
+  }
+  html body header .headerElementsContainer .hamburgerMenu input:checked ~ span::before {
+    transform: rotate(45deg);
+  }
+  html body header .headerElementsContainer .hamburgerMenu input:checked ~ span::after {
+    transform: rotate(-45deg);
+  }
+  html body header .headerElementsContainer nav {
+    display: none;
+    position: absolute;
+    width: 100%;
+    margin-top: 30rem;
+    background-color: #EAEAEA;
+    border-radius: 1rem;
+  }
+  html body header .headerElementsContainer nav ul {
+    text-align: center;
+  }
+  html body header .headerElementsContainer nav ul li {
+    display: block;
+    margin: 2rem;
+  }
+  html body header .headerElementsContainer nav ul li a {
+    color: #595C69;
+  }
+  html body header .headerElementsContainer .isOpen {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
