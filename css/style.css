@@ -36,7 +36,7 @@ html div {
 }
 html body header {
   margin-top: 1rem;
-  box-shadow: #0003 0px 8px 24px;
+  box-shadow: #0003 0px 0.8rem 2.4rem;
   width: 100%;
 }
 html body header .headerElementsContainer {
@@ -82,7 +82,7 @@ html body header .headerElementsContainer nav ul li a:hover {
     height: 0.5rem;
     background-color: #303036;
     border-radius: 0.5rem;
-    transition: background 0.1s ease-in-out, transform 0.2s ease-in-out;
+    transition: background-color 0.1s ease-in-out, transform 0.2s ease-in-out;
   }
   html body header .headerElementsContainer .hamburgerMenu span::after, html body header .headerElementsContainer .hamburgerMenu span::before {
     content: "";
@@ -122,10 +122,12 @@ html body header .headerElementsContainer nav ul li a:hover {
     position: absolute;
     width: 100%;
     margin-top: 30rem;
-    background-color: #EAEAEA;
+    background-color: white;
     border-radius: 1rem;
+    box-shadow: #0003 0px 0.8rem 2.4rem;
   }
   html body header .headerElementsContainer nav ul {
+    padding: 1rem;
     position: relative;
     text-align: center;
   }
@@ -134,7 +136,7 @@ html body header .headerElementsContainer nav ul li a:hover {
   }
   html body header .headerElementsContainer nav ul li a {
     display: block;
-    margin: 2rem 0;
+    padding: 1rem 0;
     color: #595C69;
     font-size: 1.8rem;
   }
