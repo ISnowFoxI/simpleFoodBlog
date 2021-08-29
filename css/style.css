@@ -12,16 +12,19 @@ html {
 html a {
   text-decoration: none;
   color: #9FA1AA;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw , 1.5rem);
+}
+html a:hover {
+  color: #303036;
 }
 html p {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw , 1.5rem);
 }
 html h1 {
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 2.5vw , 2.6rem);
 }
 html h2, html figcaption {
-  font-size: 1.8rem;
+  font-size: clamp(1.6rem,2.5vw,1.8rem);
 }
 html .subtext {
   font-size: 1.2rem;
@@ -35,37 +38,51 @@ html div {
   display: inline-block;
   width: 100%;
 }
-html .buttonPrimary {
+html .buttonPrimary, html .buttonAccent {
   display: block;
   font-family: "Montserrat", sans-serif;
   width: 100%;
-  max-width: 22rem;
   text-align: center;
   padding: 2rem 0;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw , 1.5rem);
   border: none;
   border-radius: 0.5rem;
+}
+html .buttonPrimary:hover, html .buttonAccent:hover {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+html .buttonPrimary {
+  max-width: 22rem;
   background-color: #595C69;
   color: white;
 }
 html .buttonPrimary:hover {
   background-color: #FFBF9D;
   color: #303036;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+html .buttonAccent {
+  background-color: #FFBF9D;
+  max-width: 27.5rem;
+  color: #303036;
+}
+html .buttonAccent:hover {
+  background-color: #595C69;
+  color: white;
+}
+html section, html header, html footer {
+  width: 100%;
+}
+html section .container, html header .container, html footer .container {
+  display: block;
+  width: clamp(16rem, 90%, 128rem);
+  margin: 0 auto;
 }
 html section {
-  width: 100%;
   margin: 12rem auto;
-}
-html section .container {
-  display: block;
-  width: clamp(16rem, 90%, 144rem);
-  margin: 0 auto;
 }
 html body header {
   margin-top: 1rem;
   box-shadow: #0003 0px 0.8rem 2.4rem;
-  width: 100%;
 }
 html body header .headerElementsContainer {
   display: flex;
@@ -73,7 +90,7 @@ html body header .headerElementsContainer {
   min-height: 8rem;
   align-items: center;
   justify-content: space-between;
-  width: clamp(16rem, 90%, 144rem);
+  width: clamp(16rem, 90%, 128rem);
   margin: 0 auto;
 }
 html body header .headerElementsContainer .hamburgerMenu {
@@ -85,25 +102,51 @@ html body header .headerElementsContainer h1 {
   font-size: 3.2rem;
   padding-top: 1rem;
 }
+html body header .headerElementsContainer nav ul {
+  width: 100%;
+}
 html body header .headerElementsContainer nav ul li {
   margin: 0 1.4rem;
   font-weight: 600;
 }
-html body header .headerElementsContainer nav ul li a:hover {
-  color: #303036;
-}
-html body main .welcomeSection .container div {
+html body main .textContainer .container div {
   max-width: 56rem;
 }
-html body main .welcomeSection .container div h1 {
+html body main .textContainer .container div h1 {
   margin-bottom: 3.1rem;
+  line-height: 3.2rem;
 }
-html body main .welcomeSection .container div p {
+html body main .textContainer .container div p {
   line-height: 3rem;
   font-weight: bold;
 }
-html body main .welcomeSection .container div .buttonPrimary {
+html body main .textContainer .container div .buttonPrimary {
   margin-top: 4rem;
+}
+html body main li {
+  position: relative;
+  max-width: 35rem;
+  background-color: transparent;
+  margin-right: 3.4rem;
+}
+html body main li:hover {
+  opacity: 0.8;
+}
+html body main li a {
+  color: #303036;
+  font-weight: 600;
+}
+html body main li a figure img {
+  width: 100%;
+}
+html body main li a figure span {
+  color: #9FA1AA;
+  display: block;
+  margin: 3.2rem 0 1.2rem;
+}
+html body main li a p {
+  margin-top: 1.6rem;
+  line-height: 2.4rem;
 }
 html body main .recipesContainer {
   background-color: #FFF8F2;
@@ -111,34 +154,9 @@ html body main .recipesContainer {
 }
 html body main .recipesContainer .container {
   width: auto;
-  margin-left: clamp(5%, calc((100vw - 144rem)/2) , 23.15rem);
+  margin-left: clamp(5%, calc((100vw - 128rem)/2) , 31.15rem);
   position: relative;
   top: -6rem;
-}
-html body main .recipesContainer .container div ul li {
-  position: relative;
-  max-width: 35rem;
-  background-color: transparent;
-  margin-right: 3.4rem;
-}
-html body main .recipesContainer .container div ul li:hover {
-  opacity: 0.8;
-}
-html body main .recipesContainer .container div ul li a {
-  color: #303036;
-  font-weight: 600;
-}
-html body main .recipesContainer .container div ul li a figure img {
-  width: 100%;
-}
-html body main .recipesContainer .container div ul li a figure span {
-  color: #9FA1AA;
-  display: block;
-  margin: 3.2rem 0 1.2rem;
-}
-html body main .recipesContainer .container div ul li a p {
-  margin-top: 1.6rem;
-  line-height: 2.4rem;
 }
 html body main .recipesContainer .container .buttonContainer {
   display: block;
@@ -168,8 +186,104 @@ html body main .recipesContainer .container .buttonContainer .gliderPrev {
 html body main .recipesContainer .container .buttonContainer .gliderNext {
   background-image: url(/images//arrow.png);
 }
+html body main .popularRecipes .container .headingContainerForPopularRecipes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+html body main .popularRecipes .container .headingContainerForPopularRecipes h1 {
+  display: inline-block;
+}
+html body main .popularRecipes .container .headingContainerForPopularRecipes .seeAll {
+  color: #303036;
+  font-weight: 600;
+  opacity: 0.7;
+}
+html body main .popularRecipes .container .headingContainerForPopularRecipes .seeAll:hover {
+  opacity: 1;
+}
+html body main .popularRecipes .container .headingContainerForPopularRecipes .seeAll::after {
+  display: inline-block;
+  content: "";
+  background-image: url(/images/arrowSmall.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1rem;
+  width: 1rem;
+  margin-left: 10px;
+}
+html body main .popularRecipes .container .popularRecipesContainer {
+  margin-top: 6rem;
+}
+html body main .popularRecipes .container .popularRecipesContainer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10rem 2rem;
+}
+html body main .popularRecipes .container .popularRecipesContainer ul li {
+  margin-right: 0;
+  max-width: 30%;
+}
+html body main .subscribeToBlog {
+  background-color: #FFF8F2;
+  padding: 9rem 0;
+}
+html body main .subscribeToBlog .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .subscribeToBlog .container div {
+  padding-right: 5rem;
+}
+html body main .author .container {
+  display: flex;
+  align-items: center;
+}
+html body main .author .container picture {
+  margin-right: clamp(3rem, 10vw,9.6rem);
+  max-width: auto;
+}
+html body main .author .container picture img {
+  border-radius: 1rem;
+}
+html body main .author .container div {
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 80rem;
+}
+html body main .author .container div h1 {
+  margin-bottom: 1rem;
+}
+html body main .author .container div .subtext {
+  color: #9FA1AA;
+}
+html body main .author .container div p {
+  margin-top: 3rem;
+}
+html body footer {
+  font-size: 1.2rem;
+  color: #9FA1AA;
+  font-weight: 600;
+  padding: 4.2rem 0;
+}
+html body footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+html body footer .container .socials {
+  width: max-content;
+}
+html body footer .container .socials a {
+  font-size: 1.2rem;
+}
+html body footer .container .socials span {
+  margin: 0 0.5rem;
+}
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   html body header .headerElementsContainer {
     position: relative;
   }
@@ -249,13 +363,13 @@ html body main .recipesContainer .container .buttonContainer .gliderNext {
   html body header .headerElementsContainer .isOpen {
     display: block;
   }
-  html body main .welcomeSection {
+  html body main .textContainer {
     text-align: center;
   }
-  html body main .welcomeSection p {
+  html body main .textContainer p {
     padding: 0 1rem;
   }
-  html body main .welcomeSection a {
+  html body main .textContainer a {
     margin: 0 auto;
   }
   html body main .recipesContainer {
@@ -266,6 +380,63 @@ html body main .recipesContainer .container .buttonContainer .gliderNext {
   }
   html body main .recipesContainer .container div ul li {
     margin-right: 2rem;
+  }
+  html body main .popularRecipes .container .popularRecipesContainer {
+    margin-top: 6rem;
+  }
+  html body main .popularRecipes .container .popularRecipesContainer ul li {
+    max-width: 45%;
+  }
+  html body main .subscribeToBlog .container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  html body main .subscribeToBlog .container div {
+    padding-right: 0;
+  }
+  html body main .subscribeToBlog .container .buttonAccent {
+    margin-top: 4rem;
+  }
+  html body main .author .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  html body main .author .container picture {
+    max-width: 35rem;
+    margin-right: 0;
+  }
+  html body main .author .container picture img {
+    border-radius: 1rem;
+    width: 100%;
+  }
+  html body main .author .container div {
+    margin: 2rem 0;
+  }
+  html body main .author .container div h1 {
+    margin-bottom: 1rem;
+  }
+  html body main .author .container div .subtext {
+    color: #9FA1AA;
+  }
+  html body main .author .container div p {
+    margin-top: 3rem;
+  }
+  html body footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  html body footer .container .socials {
+    margin-top: 1rem;
+    width: max-content;
+  }
+  html body footer .container .socials a {
+    font-size: 1.2rem;
+  }
+  html body footer .container .socials span {
+    margin: 0 0.5rem;
   }
 }
 

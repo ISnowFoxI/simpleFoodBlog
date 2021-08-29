@@ -15,9 +15,9 @@ $fw2:400;
 $fw3:500;
 $fw4:600;
 
-$fsText:1.5rem;
-$fsH1:2.6rem;
-$fsH2:1.8rem;
+$fsText:clamp(1.2rem, 2.5vw , 1.5rem);
+$fsH1:clamp(2rem, 2.5vw , 2.6rem);
+$fsH2:clamp(1.6rem,2.5vw,1.8rem);
 $fsSubText:1.2rem;
 $fsSmall:1.4rem;
 $fsnormal:1.8rem;
@@ -45,6 +45,9 @@ html {
         text-decoration: none;
         color: $subText;
         font-size: $fsText;
+        &:hover{ 
+            color: $textColor;
+        }
     }
 
     p { 
@@ -70,43 +73,65 @@ html {
         display: inline-block;
         width: 100%;
     }
-    .buttonPrimary { 
+    .buttonPrimary, .buttonAccent { 
         display: block;
         font-family: $fontMontserrat;
         width: 100%;
-        max-width: 22rem;
         text-align: center;
         padding:2rem 0 ;
         font-size: $fsText;
         border: none;
         border-radius: 0.5rem;
-        background-color:$buttonPrimary;
-        color: $bgcolor1;
        
         &:hover { 
-            background-color: $ButtonAccent;
-            color: $textColor;
+          
             transition: background-color 0.2s ease-in-out,
                         color 0.2s ease-in-out;
         }
     }
 
-    section { 
+    .buttonPrimary { 
+        max-width: 22rem;
+        background-color:$buttonPrimary;
+        color: $bgcolor1;
+
+        &:hover { 
+            background-color: $ButtonAccent;
+            color: $textColor;
+        }
+    }
+
+    .buttonAccent { 
+        background-color: $ButtonAccent;
+        max-width: 27.5rem;
+        color: $textColor;
+
+        &:hover { 
+            background-color: $buttonPrimary;
+            color: $bgcolor1;
+
+        }
+    }
+
+    section,header,footer { 
         width: 100%;
-        margin: 12rem auto;
 
         .container { 
             display: block;
-            width: clamp(16rem, 90%, 144rem);  
+            width: clamp(16rem, 90%, 128rem);  
             margin: 0 auto;
         }
+    }
+
+    section { 
+        margin: 12rem auto;
+
     }
 
     body { 
         header { 
             margin-top: 1rem;
             box-shadow: $boxShadow 0px 0.8rem 2.4rem;
-            width: 100%;
 
 
             .headerElementsContainer { 
@@ -115,7 +140,7 @@ html {
                 min-height: 8rem ;
                 align-items: center;
                 justify-content: space-between;
-                width: clamp(16rem, 90%, 144rem);
+                width: clamp(16rem, 90%, 128rem);
                 margin: 0 auto;
 
                 .hamburgerMenu { 
@@ -131,16 +156,13 @@ html {
                 nav { 
 
                     ul { 
+                        width: 100%;
                         
                         li { 
                             margin: 0 1.4rem;
                             font-weight: $fw4;
                             
-                            a { 
-                                &:hover{ 
-                                    color: $textColor;
-                                }
-                            }
+                          
                         }
                     }
                 }
@@ -149,7 +171,7 @@ html {
         }
 
         main { 
-            .welcomeSection { 
+            .textContainer { 
                
                 .container { 
                     div { 
@@ -158,6 +180,8 @@ html {
                         
                         h1 { 
                             margin-bottom: 3.1rem;
+                            line-height: 3.2rem;
+
                         }
                         
                         p { 
@@ -172,56 +196,53 @@ html {
                 }
             }
 
+            li { 
+                position: relative;
+                max-width: 35rem;
+                background-color: transparent;
+                margin-right: 3.4rem;
+                
+                &:hover { 
+                     opacity: 0.8;
+                  }
+
+                a { 
+                  color: $textColor;
+                  font-weight: $fw4;
+                 
+                    figure { 
+
+
+                        img { 
+                            width: 100% ;
+                        }
+
+
+                        span { 
+                            color: $subText;
+                            display: block;
+                            margin: 3.2rem 0 1.2rem ;
+                        }
+
+                       
+                    }
+                    p { 
+                    margin-top: 1.6rem;
+                    line-height: 2.4rem;
+                  }
+                }
+              }
+
             .recipesContainer  {
                 background-color: $bgcolor2;
                 margin-top: 21rem;
 
                 .container { 
                     width: auto;
-                    margin-left: clamp(5%, calc((100vw - 144rem)/2) , 23.15rem);
+                    margin-left: clamp(5%, calc((100vw - 128rem)/2) , 31.15rem);
                     position: relative;
                     top: -6rem;
-                    div { 
-                        ul {
-                           
-                          li { 
-                              position: relative;
-                              max-width: 35rem;
-                              background-color: transparent;
-                              margin-right: 3.4rem;
-                              
-                              &:hover { 
-                                   opacity: 0.8;
-                                }
-
-                              a { 
-                                color: $textColor;
-                                font-weight: $fw4;
-                               
-                                  figure { 
-
-
-                                      img { 
-                                          width: 100% ;
-                                      }
-
-
-                                      span { 
-                                          color: $subText;
-                                          display: block;
-                                          margin: 3.2rem 0 1.2rem ;
-                                      }
-
-                                     
-                                  }
-                                  p { 
-                                  margin-top: 1.6rem;
-                                  line-height: 2.4rem;
-                                }
-                              }
-                            }
-                      }
-                    }
+                   
 
                     .buttonContainer { 
                         display: block;
@@ -257,13 +278,137 @@ html {
                 }
 
             }
+
+            .popularRecipes { 
+                .container { 
+                    .headingContainerForPopularRecipes { 
+                        display: flex;
+                        align-items:center ;
+                        justify-content: space-between;
+                        h1 { 
+                            display: inline-block;
+                        }
+                        .seeAll{ 
+                            color: $textColor;
+                            font-weight: $fw4;
+                            opacity: 0.7;
+                            &:hover{ 
+                                opacity: 1;
+                            }
+                            
+                            &::after { 
+                                display: inline-block;
+                                content: '';
+                                background-image: url(/images/arrowSmall.png);
+                                background-position: center;
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                height: 1rem;
+                                width: 1rem;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+
+                    .popularRecipesContainer { 
+
+                        margin-top: 6rem;
+                        ul { 
+                         display: flex;
+                         flex-wrap: wrap;
+                         justify-content: space-between;
+                         gap:10rem 2rem ;
+                        li { 
+                            margin-right: 0;
+                            max-width: 30%;
+                        }
+                   }
+                    }
+                }
+            }
             
+            .subscribeToBlog { 
+                background-color: $bgcolor2;
+                padding: 9rem 0;
+                    .container { 
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                       div { 
+                           padding-right: 5rem;
+                       }
+                    }
+            }
+
+            .author { 
+                .container { 
+                    display: flex;
+                    align-items: center;
+
+                    picture { 
+                        margin-right: clamp(3rem, 10vw,9.6rem);
+                        max-width: auto;
+
+                        img { 
+                            border-radius: 1rem;
+
+                        }
+                    }
+                    div { 
+                        margin: 2rem 0;
+                        width: 100%;
+                        max-width: 80rem;
+                        h1 { 
+                            margin-bottom: 1rem;
+                        }
+
+                        .subtext { 
+                            color: $subText;
+                        }
+
+                        p { 
+                            margin-top: 3rem;
+                        }
+                    }
+                }
+
+                
+                   
+                   
+            }
+
+           
+        }
+
+        footer { 
+            font-size: $fsSubText;
+            color: $subText;
+            font-weight: $fw4;
+            padding: 4.2rem 0;
+
+            .container { 
+                display: flex;
+                justify-content: space-between;
+                .socials
+                { 
+                    width: max-content;
+
+                    a { 
+                        font-size: $fsSubText;
+
+                        
+                    }
+                    span { 
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
         }
     }
 }
 
 
-@media screen and(max-width:700px) {
+@media screen and(max-width:800px) {
     html { 
         body { 
             header { 
@@ -363,7 +508,7 @@ html {
                 }
             }
             main { 
-                .welcomeSection { 
+                .textContainer { 
                     text-align: center;
                     p { 
                         padding: 0 1rem;
@@ -383,6 +528,97 @@ html {
                                     margin-right: 2rem;
                                 }
                             }
+                        }
+                    }
+                }
+
+                .popularRecipes { 
+                    .container  { 
+                        .popularRecipesContainer { 
+                            
+                            margin-top: 6rem;
+                            ul { 
+                                
+                                li { 
+                                max-width: 45%;
+                            }
+                        }
+                    }
+                }
+
+                }
+
+                .subscribeToBlog { 
+                            .container { 
+                                flex-direction: column;
+                            justify-content: space-between;
+                            align-items: center;
+                           div { 
+                               padding-right:0;
+
+
+                           }
+
+                           .buttonAccent { 
+                               margin-top: 4rem;
+                           }
+                        }
+                }
+
+                .author { 
+
+                    .container { 
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+    
+                        picture { 
+                            max-width: 35rem;
+                            margin-right: 0;
+                            img { 
+                                border-radius: 1rem;
+                                width: 100%;
+                            }
+                        }
+                        div { 
+                            margin: 2rem 0;
+
+                            h1 { 
+                                margin-bottom: 1rem;
+                            }
+
+                            .subtext { 
+                                color: $subText;
+                            }
+
+                            p { 
+                                margin-top: 3rem;
+                            }
+                        }
+                    }
+                }
+               
+            }
+
+            footer { 
+                
+    
+                .container { 
+                    flex-direction: column;
+                    align-items: center;
+                    .socials
+                    { 
+                        margin-top: 1rem;
+                        width: max-content;
+    
+                        a { 
+                            font-size: $fsSubText;
+    
+                            
+                        }
+                        span { 
+                            margin: 0 0.5rem;
                         }
                     }
                 }
