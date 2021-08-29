@@ -264,6 +264,9 @@ html body main .recipesContainer .container .buttonContainer .gliderNext {
   html body main .recipesContainer .container {
     margin: 0 auto;
   }
+  html body main .recipesContainer .container div ul li {
+    margin-right: 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

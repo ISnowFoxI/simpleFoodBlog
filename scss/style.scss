@@ -377,6 +377,13 @@ html {
                     padding-left: 2rem;
                     .container  { 
                         margin: 0 auto;
+                        div { 
+                            ul { 
+                                li { 
+                                    margin-right: 2rem;
+                                }
+                            }
+                        }
                     }
                 }
             }
