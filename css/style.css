@@ -384,6 +384,9 @@ html body footer .container .socials span {
   html body main .popularRecipes .container .popularRecipesContainer {
     margin-top: 6rem;
   }
+  html body main .popularRecipes .container .popularRecipesContainer ul {
+    gap: 4rem 0;
+  }
   html body main .popularRecipes .container .popularRecipesContainer ul li {
     max-width: 45%;
   }
