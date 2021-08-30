@@ -577,6 +577,8 @@ html {
         body {
             header {
                 .headerElementsContainer {
+                    z-index: 100;
+
                     position: relative;
                     .hamburgerMenu {
                         display: flex;
@@ -641,7 +643,7 @@ html {
                         display: none;
                         position: absolute;
                         width: 100%;
-                        margin-top: 30rem;
+                        margin-top: 35rem;
                         background-color: $bgcolor1;
                         border-radius: 1rem;
                         box-shadow: $boxShadow 0px 0.8rem 2.4rem;
