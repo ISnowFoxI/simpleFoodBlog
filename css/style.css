@@ -187,11 +187,11 @@ html body main .buttonContainer .gliderNext:hover {
   opacity: 1;
 }
 html body main .buttonContainer .gliderPrev {
-  background-image: url(/images/arrow.png);
+  background-image: url(../images/arrow.png);
   transform: rotate(180deg);
 }
 html body main .buttonContainer .gliderNext {
-  background-image: url(/images/arrow.png);
+  background-image: url(../images/arrow.png);
 }
 html body main .recipesContainer {
   background-color: #fff8f2;
@@ -222,7 +222,7 @@ html body main .popularRecipes .container .headingContainerForPopularRecipes .se
 html body main .popularRecipes .container .headingContainerForPopularRecipes .seeAll::after {
   display: inline-block;
   content: "";
-  background-image: url(/images/arrowSmall.png);
+  background-image: url(../images/arrowSmall.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -316,13 +316,13 @@ html body main .intro .container div .icons::before {
   height: 2rem;
 }
 html body main .intro .container div .portion::before {
-  background-image: url(/images/spoon.png);
+  background-image: url(../images/spoon.png);
 }
 html body main .intro .container div .preparation::before {
-  background-image: url(/images/apron.png);
+  background-image: url(../images/apron.png);
 }
 html body main .intro .container div .cooking::before {
-  background-image: url(/images/cooking.png);
+  background-image: url(../images/cooking.png);
 }
 html body main .recipeItself {
   background-color: #fff8f2;
@@ -405,7 +405,7 @@ html body main .container .pagination ul .nextPage::after {
   display: inline-block;
   width: 1rem;
   height: 1rem;
-  background-image: url(/images/arrowSmall.png);
+  background-image: url(../images/arrowSmall.png);
   background-position: center;
   background-size: contain;
   vertical-align: middle;

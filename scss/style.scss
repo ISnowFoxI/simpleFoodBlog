@@ -264,12 +264,12 @@ html {
                     }
 
                 .gliderPrev {
-                    background-image: url(/images/arrow.png);
+                    background-image: url(../images/arrow.png);
                     transform: rotate(180deg);
                 }
 
                 .gliderNext {
-                    background-image: url(/images/arrow.png);
+                    background-image: url(../images/arrow.png);
                 }
             }
 
@@ -308,7 +308,7 @@ html {
                             &::after {
                                 display: inline-block;
                                 content: "";
-                                background-image: url(/images/arrowSmall.png);
+                                background-image: url(../images/arrowSmall.png);
                                 background-position: center;
                                 background-size: contain;
                                 background-repeat: no-repeat;
@@ -423,13 +423,13 @@ html {
                             }
                         }
                         .portion::before { 
-                            background-image: url(/images/spoon.png);
+                            background-image: url(../images/spoon.png);
                         }
                         .preparation::before { 
-                            background-image: url(/images/apron.png);
+                            background-image: url(../images/apron.png);
                         }
                         .cooking::before { 
-                            background-image: url(/images/cooking.png);
+                            background-image: url(../images/cooking.png);
                         }
 
                        
@@ -539,7 +539,7 @@ html {
                         display: inline-block;
                         width: 1rem;
                         height: 1rem;
-                        background-image: url(/images/arrowSmall.png);
+                        background-image: url(../images/arrowSmall.png);
                         background-position: center;
                         background-size: contain;
                         vertical-align: middle;
