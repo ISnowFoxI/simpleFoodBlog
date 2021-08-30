@@ -1,304 +1,313 @@
-$fontMontserrat: 'Montserrat', sans-serif;; 
-$fontDelafield:'Mrs Saint Delafield', cursive;
+//* variables
+    //? font-family
 
+$fontMontserrat: "Montserrat", sans-serif;
+$fontDelafield: "Mrs Saint Delafield", cursive;
+    //? colors
 $bgcolor1: white;
-$bgcolor2:#FFF8F2;
-$bgcolor3:#EAEAEA;
-$ButtonAccent: #FFBF9D;
-$buttonPrimary:#595C69;
-$subText:#9FA1AA;
-$textColor:#303036;
-$boxShadow:#0003;
-
-$fw1:300;
-$fw2:400;
-$fw3:500;
-$fw4:600;
-
-$fsText:clamp(1.2rem, 2.5vw , 1.5rem);
-$fsH1:clamp(2rem, 2.5vw , 2.6rem);
-$fsH2:clamp(1.6rem,2.5vw,1.8rem);
-$fsSubText:1.2rem;
-$fsSmall:1.4rem;
-$fsnormal:1.8rem;
-$fsBig:3.2rem;
-
-$maxWidth:144rem;
+$bgcolor2: #fff8f2;
+$bgcolor3: #eaeaea;
+$ButtonAccent: #ffbf9d;
+$buttonPrimary: #595c69;
+$subText: #9fa1aa;
+$textColor: #303036;
+$boxShadow: #0003;
+    //? font-weight
+$fw1: 300;
+$fw2: 400;
+$fw3: 500;
+$fw4: 600;
+    //? font-size
+$fsText: clamp(1.2rem, 2.5vw, 1.5rem);
+$fsH1: clamp(2rem, 2.5vw, 2.6rem);
+$fsH2: clamp(1.6rem, 2.5vw, 1.8rem);
+$fsSubText: 1.2rem;
+$fsSmall: 1.4rem;
+$fsnormal: 1.8rem;
+$fsBig: 3.2rem;
+    //? max-width for some buttons
+$maxWidth: 144rem;
 
 //Simple Reset
-*,*::after,*::before { 
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
-
-
-//Main styling 
-html { 
+//Main styling
+html {
     font-size: 10px;
     font-weight: $fw3;
     font-family: $fontMontserrat;
     //? usning html selectors to get a lot done with as little css as possible
-    a { 
+    a {
         text-decoration: none;
         color: $subText;
         font-size: $fsText;
-        &:hover{ 
+        &:hover {
             color: $textColor;
         }
     }
-
-    p { 
+    .isActive {
+        color: $textColor;
+    }
+    p {
         font-size: $fsText;
     }
-    h1 {  
+    h1 {
         font-size: $fsH1;
-      } 
+    }
 
-    h2,figcaption { 
+    h2,
+    figcaption {
         font-size: $fsH2;
     }
-    .subtext { 
+    .subtext {
         font-size: $fsSubText;
         font-weight: $fw4;
     }
 
-    li { 
-        display: inline-block;
+    li {
         list-style-type: none;
     }
-    div  { 
+    div {
         display: inline-block;
         width: 100%;
     }
-    .buttonPrimary, .buttonAccent { 
+
+    //? Button styles
+    .buttonPrimary,
+    .buttonAccent {
         display: block;
         font-family: $fontMontserrat;
         width: 100%;
         text-align: center;
-        padding:2rem 0 ;
+        padding: 2rem 0;
         font-size: $fsText;
         border: none;
         border-radius: 0.5rem;
-       
-        &:hover { 
-          
-            transition: background-color 0.2s ease-in-out,
-                        color 0.2s ease-in-out;
+
+        &:hover {
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
         }
     }
 
-    .buttonPrimary { 
+    .buttonPrimary {
         max-width: 22rem;
-        background-color:$buttonPrimary;
+        background-color: $buttonPrimary;
         color: $bgcolor1;
 
-        &:hover { 
+        &:hover {
             background-color: $ButtonAccent;
             color: $textColor;
         }
     }
 
-    .buttonAccent { 
+    .buttonAccent {
         background-color: $ButtonAccent;
         max-width: 27.5rem;
         color: $textColor;
 
-        &:hover { 
+        &:hover {
             background-color: $buttonPrimary;
             color: $bgcolor1;
-
         }
     }
 
-    section,header,footer { 
+
+    //? limiting some elements to maximum of 1280px
+    section,
+    header,
+    footer {
         width: 100%;
 
-        .container { 
+        .container {
             display: block;
-            width: clamp(16rem, 90%, 128rem);  
+            width: clamp(16rem, 90%, 128rem);
             margin: 0 auto;
         }
     }
-
-    section { 
+    //? giving each section a must have margin
+    section {
         margin: 12rem auto;
-
     }
 
-    body { 
-        header { 
+    //? desktop first styling 
+    body {
+
+        //?styling for the header 
+        header {
             margin-top: 1rem;
             box-shadow: $boxShadow 0px 0.8rem 2.4rem;
 
-
-            .headerElementsContainer { 
+            .headerElementsContainer {
                 display: flex;
                 max-width: $maxWidth;
-                min-height: 8rem ;
+                min-height: 8rem;
                 align-items: center;
                 justify-content: space-between;
                 width: clamp(16rem, 90%, 128rem);
                 margin: 0 auto;
 
-                .hamburgerMenu { 
+                .hamburgerMenu {
                     display: none;
                 }
 
-                h1 { 
-                    font-family: $fontDelafield;
-                    font-weight: $fw2;
-                    font-size: $fsBig;
-                    padding-top: 1rem;
-                }
-                nav { 
+                h1 {
+                    a {
+                        font-family: $fontDelafield;
+                        font-weight: $fw2;
+                        font-size: $fsBig;
+                        padding-top: 1rem;
+                        color: $textColor;
 
-                    ul { 
-                        width: 100%;
-                        
-                        li { 
-                            margin: 0 1.4rem;
-                            font-weight: $fw4;
-                            
-                          
+                        &:hover {
+                            color: $subText;
                         }
                     }
                 }
+                nav {
+                    ul {
+                        width: 100%;
 
+                        li {
+                            display: inline-block;
+                            margin: 0 1.4rem;
+
+                            font-weight: $fw4;
+                        }
+                    }
+                }
             }
         }
 
-        main { 
-            .textContainer { 
-               
-                .container { 
-                    div { 
 
+        //? main element and overall styling
+        main {
+            //? start of landing page styling 
+            .textContainer {
+                .container {
+                    div {
                         max-width: 56rem;
-                        
-                        h1 { 
+
+                        h1 {
                             margin-bottom: 3.1rem;
                             line-height: 3.2rem;
-
                         }
-                        
-                        p { 
+
+                        p {
                             line-height: 3rem;
                             font-weight: bold;
                         }
-                        
-                        .buttonPrimary { 
+
+                        .buttonPrimary {
                             margin-top: 4rem;
                         }
                     }
                 }
             }
-
-            li { 
+            //! overall styling for the li elements 
+            li {
                 position: relative;
                 max-width: 35rem;
-                background-color: transparent;
                 margin-right: 3.4rem;
-                
-                &:hover { 
-                     opacity: 0.8;
-                  }
 
-                a { 
-                  color: $textColor;
-                  font-weight: $fw4;
-                 
-                    figure { 
+                &:hover {
+                    opacity: 0.8;
+                }
 
+                a {
+                    color: $textColor;
+                    font-weight: $fw4;
 
-                        img { 
-                            width: 100% ;
+                    figure {
+                        img {
+                            width: 100%;
                         }
 
-
-                        span { 
+                        span {
                             color: $subText;
                             display: block;
-                            margin: 3.2rem 0 1.2rem ;
+                            margin: 3.2rem 0 1.2rem;
                         }
-
-                       
                     }
-                    p { 
-                    margin-top: 1.6rem;
-                    line-height: 2.4rem;
-                  }
+                    p {
+                        margin-top: 1.6rem;
+                        line-height: 2.4rem;
+                    }
                 }
-              }
+            }
+            //! overall sryling for slider buttons
+            .buttonContainer {
+                display: block;
+                margin: 0 auto;
+                text-align: center;
+                    .gliderPrev,
+                    .gliderNext {
+                        display: inline-block;
+                        margin: 2rem;
+                        width: 3rem;
+                        height: 3rem;
+                        border: none;
+                        background-color: transparent;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        opacity: 0.5;
+                        cursor: pointer;
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
 
-            .recipesContainer  {
+                .gliderPrev {
+                    background-image: url(/images/arrow.png);
+                    transform: rotate(180deg);
+                }
+
+                .gliderNext {
+                    background-image: url(/images/arrow.png);
+                }
+            }
+
+            
+            .recipesContainer {
                 background-color: $bgcolor2;
                 margin-top: 21rem;
 
-                .container { 
+                .container {
                     width: auto;
-                    margin-left: clamp(5%, calc((100vw - 128rem)/2) , 31.15rem);
+                    margin-left: clamp(5%, calc((100vw - 128rem) / 2), 31.15rem);
                     position: relative;
                     top: -6rem;
-                   
 
-                    .buttonContainer { 
-                        display: block;
-                        margin: 0 auto;
-                        text-align: center;
-                        .gliderPrev,.gliderNext { 
-                            display: inline-block;
-                            margin: 2rem;
-                            width: 3rem;
-                            height: 3rem;
-                            border: none;
-                            background-color: transparent;
-                            background-repeat: no-repeat;
-                            background-size: contain;
-                            background-position: center;
-                            opacity: 0.5;
-                            cursor: pointer;
-                            &:hover {
-                                opacity: 1;
-                            }
-                        }
-    
-                        .gliderPrev { 
-                            background-image: url(/images/arrow.png);
-                            transform: rotate(180deg);
-                            
-                        }
-    
-                        .gliderNext { 
-                            background-image: url(/images//arrow.png);
-                        }
-                    }
+                    
                 }
-
             }
 
-            .popularRecipes { 
-                .container { 
-                    .headingContainerForPopularRecipes { 
+            .popularRecipes {
+                .container {
+                    .headingContainerForPopularRecipes {
                         display: flex;
-                        align-items:center ;
+                        align-items: center;
                         justify-content: space-between;
-                        h1 { 
+                        h1 {
                             display: inline-block;
                         }
-                        .seeAll{ 
+                        .seeAll {
                             color: $textColor;
                             font-weight: $fw4;
                             opacity: 0.7;
-                            &:hover{ 
+                            &:hover {
                                 opacity: 1;
                             }
-                            
-                            &::after { 
+
+                            &::after {
                                 display: inline-block;
-                                content: '';
+                                content: "";
                                 background-image: url(/images/arrowSmall.png);
                                 background-position: center;
                                 background-size: contain;
@@ -310,111 +319,266 @@ html {
                         }
                     }
 
-                    .popularRecipesContainer { 
-
+                    .popularRecipesContainer {
                         margin-top: 6rem;
-                        ul { 
-                         display: flex;
-                         flex-wrap: wrap;
-                         justify-content: space-between;
-                         gap:10rem 2rem ;
-                        li { 
-                            margin-right: 0;
-                            max-width: 30%;
+                        ul {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            gap: 10rem 3%;
+                            li {
+                                margin-right: 0;
+                                max-width: 30%;
+                            }
                         }
-                   }
                     }
                 }
             }
-            
-            .subscribeToBlog { 
+
+            .subscribeToBlog {
                 background-color: $bgcolor2;
                 padding: 9rem 0;
-                    .container { 
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                       div { 
-                           padding-right: 5rem;
-                       }
+                .container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    div {
+                        padding-right: 5rem;
                     }
+                }
             }
 
-            .author { 
-                .container { 
+            .author {
+                .container {
                     display: flex;
                     align-items: center;
 
-                    picture { 
-                        margin-right: clamp(3rem, 10vw,9.6rem);
+                    picture {
+                        margin-right: clamp(3rem, 10vw, 9.6rem);
                         max-width: auto;
 
-                        img { 
+                        img {
                             border-radius: 1rem;
-
                         }
                     }
-                    div { 
+                    div {
                         margin: 2rem 0;
                         width: 100%;
                         max-width: 80rem;
-                        h1 { 
+                        h1 {
                             margin-bottom: 1rem;
                         }
 
-                        .subtext { 
+                        .subtext {
                             color: $subText;
                         }
 
-                        p { 
+                        p {
                             margin-top: 3rem;
                         }
                     }
                 }
+            }
+            //! end of landing page styling
 
-                
-                   
-                   
+
+            //? start of the styling for one page recipe
+            .intro { 
+                .container { 
+                    display: flex;
+                    gap: 5rem;
+                    align-items: center;
+                    picture { 
+                        width:100%;
+                        img { 
+                            width: 100%;
+
+                        }
+                    }
+                    div { 
+
+                        span { 
+                            display: block;
+                            font-size: $fsText;
+                            color: $buttonPrimary;
+                            font-weight: $fw4;
+                            
+                        }
+                        .infoAboutMeal { 
+                            margin-top: 10rem;
+                        }
+                        .icons { 
+                            align-items: center;
+                            margin: 3rem 0 ;
+                            &::before {
+                                vertical-align: middle;
+                                display: inline-block;
+                                content: '';
+                                margin-right: 2rem;
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                width: 2rem;
+                                height: 2rem;
+                            }
+                        }
+                        .portion::before { 
+                            background-image: url(/images/spoon.png);
+                        }
+                        .preparation::before { 
+                            background-image: url(/images/apron.png);
+                        }
+                        .cooking::before { 
+                            background-image: url(/images/cooking.png);
+                        }
+
+                       
+                    }
+                }
             }
 
-           
-        }
+            .recipeItself { 
+                background-color: $bgcolor2;
+               .container { 
+                   
+                   padding: 7.6rem 0 ;
+                   font-weight: $fw4;
+                   color: $buttonPrimary;
+                   display: flex;
+                   gap: 5rem;
+                   align-items: center;
+                   picture { 
+                       width:100%;
+                       img { 
+                           width: 100%;
 
-        footer { 
-            font-size: $fsSubText;
-            color: $subText;
-            font-weight: $fw4;
-            padding: 4.2rem 0;
-
-            .container { 
-                display: flex;
-                justify-content: space-between;
-                .socials
-                { 
-                    width: max-content;
-
-                    a { 
-                        font-size: $fsSubText;
-
-                        
+                       }
                     }
-                    span { 
-                        margin: 0 0.5rem;
+                        div { 
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5rem;
+                            
+                            div  { 
+                                display: inline-block;
+                                
+                                ul { 
+                                    li { 
+                                        max-width: 100%;
+                                        font-size: $fsText;
+                                        color: $subText;
+                                        margin: 2.5rem 0;
+                                        color: $buttonPrimary;
+                                        
+                                    }
+                                }
+                            }
+                        }
+               }
+            }
+
+            .prepareFood {
+                .container {
+                    .instructions {
+                        font-weight: $fw4;
+                        color: $buttonPrimary;
+                        h2 {
+                            margin-bottom: 2.5rem;
+                        }
+                        ol {
+                            li {
+                                max-width: 100%;
+                                margin: 0 0 4rem;
+                                line-height: 3rem;
+                                list-style: decimal;
+                                
+                                margin-left: 2rem;
+                                &::marker {
+                                    font-size: $fsnormal;
+                                }
+
+                                p {
+                                    margin-left: 1.4rem;
+                                }
+                            }
+                        }
                     }
+                }
+            }
+
+            .suggestions {
+                background-color: transparent;
+                .container {
+                    width: auto;
+                    margin-left: clamp(5%, calc((100vw - 128rem) / 2), 31.15rem);
+
+                    h1 {
+                        margin-bottom: 6rem;
+                    }
+                }
+            }
+            //end of the styling for one page recipe
+        
+    
+            .container {
+            .pagination  { 
+                margin-top: 14rem;
+                ul { 
+                    display: flex;
+                    justify-content: center;
+                    gap: clamp(1rem,10%, 4rem);
+                    li { 
+                        margin: 0;
+                        a:hover { 
+                            color: $ButtonAccent;
+                        }
+                    }
+
+                    .nextPage::after { 
+                        content: '';
+                        display: inline-block;
+                        width: 1rem;
+                        height: 1rem;
+                        background-image: url(/images/arrowSmall.png);
+                        background-position: center;
+                        background-size: contain;
+                        vertical-align: middle;
+                        background-repeat: no-repeat;
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+    }}
+    footer {
+        font-size: $fsSubText;
+        color: $subText;
+        font-weight: $fw4;
+        padding: 4.2rem 0;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            .socials {
+                width: max-content;
+
+                a {
+                    font-size: $fsSubText;
+                }
+                span {
+                    margin: 0 0.5rem;
                 }
             }
         }
     }
-}
-
+}}
 
 @media screen and(max-width:800px) {
-    html { 
-        body { 
-            header { 
-                .headerElementsContainer { 
+    html {
+        body {
+            header {
+                .headerElementsContainer {
                     position: relative;
-                    .hamburgerMenu { 
+                    .hamburgerMenu {
                         display: flex;
                         position: relative;
                         justify-content: center;
@@ -422,37 +586,36 @@ html {
                         flex-direction: column;
                         width: 3.2rem;
                         height: 2.5rem;
-                    
-                        span { 
+
+                        span {
                             position: absolute;
                             width: 3.2rem;
                             height: 0.5rem;
                             background-color: $textColor;
                             border-radius: 0.5rem;
-                            transition:  background-color 0.1s ease-in-out, transform 0.2s ease-in-out;
-                        
-                            &::after, &::before { 
-                            content: '';
-                            position: absolute;
-                            width: 3.2rem;
-                            height: 0.5rem;
-                            background-color: $textColor;
-                            border-radius: 0.5rem;
-                            transition: opacity 0.1s ease-in-out, transform 0.2s ease-in-out;
+                            transition: background-color 0.1s ease-in-out, transform 0.2s ease-in-out;
+
+                            &::after,
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 3.2rem;
+                                height: 0.5rem;
+                                background-color: $textColor;
+                                border-radius: 0.5rem;
+                                transition: opacity 0.1s ease-in-out, transform 0.2s ease-in-out;
+                            }
+
+                            &::before {
+                                transform: translateY(-0.9rem);
+                            }
+
+                            &::after {
+                                transform: translateY(0.9rem);
+                            }
                         }
 
-                        &::before { 
-                            transform: translateY(-0.9rem);
-                        }
-
-                        &::after { 
-                            transform: translateY(0.9rem);
-                        }
-
-                        
-                        }
-                      
-                        input {  
+                        input {
                             z-index: 1;
                             display: block;
                             position: absolute;
@@ -460,39 +623,36 @@ html {
                             height: 100%;
                             opacity: 0;
                             cursor: pointer;
-                        
-                            &:checked ~ span{ 
-                                    background-color:transparent;
+
+                            &:checked ~ span {
+                                background-color: transparent;
                             }
 
-                            &:checked ~ span::before { 
+                            &:checked ~ span::before {
                                 transform: rotate(45deg);
                             }
-                            &:checked ~ span::after { 
+                            &:checked ~ span::after {
                                 transform: rotate(-45deg);
                             }
                         }
-                   
-                       
                     }
 
-                    
-                    nav { 
+                    nav {
                         display: none;
-                        position: absolute;    
+                        position: absolute;
                         width: 100%;
                         margin-top: 30rem;
                         background-color: $bgcolor1;
                         border-radius: 1rem;
                         box-shadow: $boxShadow 0px 0.8rem 2.4rem;
 
-                        ul { 
+                        ul {
                             padding: 1rem;
                             position: relative;
                             text-align: center;
-                            li { 
+                            li {
                                 display: block;
-                                a { 
+                                a {
                                     display: block;
                                     padding: 1rem 0;
                                     color: $buttonPrimary;
@@ -501,30 +661,29 @@ html {
                             }
                         }
                     }
-                    .isOpen{ 
+                    .isOpen {
                         display: block;
                     }
-                    
                 }
             }
-            main { 
-                .textContainer { 
+            main {
+                .textContainer {
                     text-align: center;
-                    p { 
+                    p {
                         padding: 0 1rem;
                     }
-                    a { 
+                    a {
                         margin: 0 auto;
                     }
                 }
 
-                .recipesContainer { 
+                .recipesContainer {
                     padding-left: 2rem;
-                    .container  { 
+                    .container {
                         margin: 0 auto;
-                        div { 
-                            ul { 
-                                li { 
+                        div {
+                            ul {
+                                li {
                                     margin-right: 2rem;
                                 }
                             }
@@ -532,93 +691,130 @@ html {
                     }
                 }
 
-                .popularRecipes { 
-                    .container  { 
-                        .popularRecipesContainer { 
-                            
+                .popularRecipes {
+                    .container {
+                        .popularRecipesContainer {
                             margin-top: 6rem;
-                            ul { 
-                                gap: 4rem 0;
-                                
-                                li { 
-                                max-width: 45%;
+                            ul {
+                                gap: 4rem auto;
+
+                                li {
+                                    max-width: 45%;
+                                }
                             }
                         }
                     }
                 }
 
-                }
-
-                .subscribeToBlog { 
-                            .container { 
-                                flex-direction: column;
-                            justify-content: space-between;
-                            align-items: center;
-                           div { 
-                               padding-right:0;
-
-
-                           }
-
-                           .buttonAccent { 
-                               margin-top: 4rem;
-                           }
+                .subscribeToBlog {
+                    .container {
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                        div {
+                            padding-right: 0;
                         }
+
+                        .buttonAccent {
+                            margin-top: 4rem;
+                        }
+                    }
                 }
 
-                .author { 
-
-                    .container { 
+                .author {
+                    .container {
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
                         align-items: center;
-    
-                        picture { 
+
+                        picture {
                             max-width: 35rem;
                             margin-right: 0;
-                            img { 
+                            img {
                                 border-radius: 1rem;
                                 width: 100%;
                             }
                         }
-                        div { 
+                        div {
                             margin: 2rem 0;
 
-                            h1 { 
+                            h1 {
                                 margin-bottom: 1rem;
                             }
 
-                            .subtext { 
+                            .subtext {
                                 color: $subText;
                             }
 
-                            p { 
+                            p {
                                 margin-top: 3rem;
                             }
                         }
                     }
                 }
-               
             }
 
-            footer { 
-                
-    
+            .intro { 
                 .container { 
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5rem;
+                    picture { 
+                        width:100%;
+                        img { 
+                            width: 100%;
+
+                        }
+                    }
+                    div { 
+                        text-align: center;
+                        
+                            ul { 
+                                text-align: center;
+                            }
+                    }
+                   
+                }
+            }
+
+            .recipeItself { 
+                background-color: $bgcolor2;
+               .container { 
+                   
+                   padding: 7.6rem 0 ;
+                   font-weight: $fw4;
+                   color: $buttonPrimary;
+                   display: flex;
+                   flex-direction: column;
+                   gap: 5rem;
+                   align-items: center;
+                   picture { 
+                       width:100%;
+                       img { 
+                           width: 100%;
+
+                       }
+                    }
+
+                  
+               }
+            }
+
+            
+
+            footer {
+                .container {
                     flex-direction: column;
                     align-items: center;
-                    .socials
-                    { 
+                    .socials {
                         margin-top: 1rem;
                         width: max-content;
-    
-                        a { 
+
+                        a {
                             font-size: $fsSubText;
-    
-                            
                         }
-                        span { 
+                        span {
                             margin: 0 0.5rem;
                         }
                     }
@@ -626,5 +822,4 @@ html {
             }
         }
     }
-    
 }

@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,68 +13,77 @@ html {
 }
 html a {
   text-decoration: none;
-  color: #9FA1AA;
-  font-size: clamp(1.2rem, 2.5vw , 1.5rem);
+  color: #9fa1aa;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 }
 html a:hover {
   color: #303036;
 }
+html .isActive {
+  color: #303036;
+}
 html p {
-  font-size: clamp(1.2rem, 2.5vw , 1.5rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 }
 html h1 {
-  font-size: clamp(2rem, 2.5vw , 2.6rem);
+  font-size: clamp(2rem, 2.5vw, 2.6rem);
 }
-html h2, html figcaption {
-  font-size: clamp(1.6rem,2.5vw,1.8rem);
+html h2,
+html figcaption {
+  font-size: clamp(1.6rem, 2.5vw, 1.8rem);
 }
 html .subtext {
   font-size: 1.2rem;
   font-weight: 600;
 }
 html li {
-  display: inline-block;
   list-style-type: none;
 }
 html div {
   display: inline-block;
   width: 100%;
 }
-html .buttonPrimary, html .buttonAccent {
+html .buttonPrimary,
+html .buttonAccent {
   display: block;
   font-family: "Montserrat", sans-serif;
   width: 100%;
   text-align: center;
   padding: 2rem 0;
-  font-size: clamp(1.2rem, 2.5vw , 1.5rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   border: none;
   border-radius: 0.5rem;
 }
-html .buttonPrimary:hover, html .buttonAccent:hover {
+html .buttonPrimary:hover,
+html .buttonAccent:hover {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 html .buttonPrimary {
   max-width: 22rem;
-  background-color: #595C69;
+  background-color: #595c69;
   color: white;
 }
 html .buttonPrimary:hover {
-  background-color: #FFBF9D;
+  background-color: #ffbf9d;
   color: #303036;
 }
 html .buttonAccent {
-  background-color: #FFBF9D;
+  background-color: #ffbf9d;
   max-width: 27.5rem;
   color: #303036;
 }
 html .buttonAccent:hover {
-  background-color: #595C69;
+  background-color: #595c69;
   color: white;
 }
-html section, html header, html footer {
+html section,
+html header,
+html footer {
   width: 100%;
 }
-html section .container, html header .container, html footer .container {
+html section .container,
+html header .container,
+html footer .container {
   display: block;
   width: clamp(16rem, 90%, 128rem);
   margin: 0 auto;
@@ -96,16 +107,21 @@ html body header .headerElementsContainer {
 html body header .headerElementsContainer .hamburgerMenu {
   display: none;
 }
-html body header .headerElementsContainer h1 {
+html body header .headerElementsContainer h1 a {
   font-family: "Mrs Saint Delafield", cursive;
   font-weight: 400;
   font-size: 3.2rem;
   padding-top: 1rem;
+  color: #303036;
+}
+html body header .headerElementsContainer h1 a:hover {
+  color: #9fa1aa;
 }
 html body header .headerElementsContainer nav ul {
   width: 100%;
 }
 html body header .headerElementsContainer nav ul li {
+  display: inline-block;
   margin: 0 1.4rem;
   font-weight: 600;
 }
@@ -126,7 +142,6 @@ html body main .textContainer .container div .buttonPrimary {
 html body main li {
   position: relative;
   max-width: 35rem;
-  background-color: transparent;
   margin-right: 3.4rem;
 }
 html body main li:hover {
@@ -140,7 +155,7 @@ html body main li a figure img {
   width: 100%;
 }
 html body main li a figure span {
-  color: #9FA1AA;
+  color: #9fa1aa;
   display: block;
   margin: 3.2rem 0 1.2rem;
 }
@@ -148,22 +163,13 @@ html body main li a p {
   margin-top: 1.6rem;
   line-height: 2.4rem;
 }
-html body main .recipesContainer {
-  background-color: #FFF8F2;
-  margin-top: 21rem;
-}
-html body main .recipesContainer .container {
-  width: auto;
-  margin-left: clamp(5%, calc((100vw - 128rem)/2) , 31.15rem);
-  position: relative;
-  top: -6rem;
-}
-html body main .recipesContainer .container .buttonContainer {
+html body main .buttonContainer {
   display: block;
   margin: 0 auto;
   text-align: center;
 }
-html body main .recipesContainer .container .buttonContainer .gliderPrev, html body main .recipesContainer .container .buttonContainer .gliderNext {
+html body main .buttonContainer .gliderPrev,
+html body main .buttonContainer .gliderNext {
   display: inline-block;
   margin: 2rem;
   width: 3rem;
@@ -176,15 +182,26 @@ html body main .recipesContainer .container .buttonContainer .gliderPrev, html b
   opacity: 0.5;
   cursor: pointer;
 }
-html body main .recipesContainer .container .buttonContainer .gliderPrev:hover, html body main .recipesContainer .container .buttonContainer .gliderNext:hover {
+html body main .buttonContainer .gliderPrev:hover,
+html body main .buttonContainer .gliderNext:hover {
   opacity: 1;
 }
-html body main .recipesContainer .container .buttonContainer .gliderPrev {
+html body main .buttonContainer .gliderPrev {
   background-image: url(/images/arrow.png);
   transform: rotate(180deg);
 }
-html body main .recipesContainer .container .buttonContainer .gliderNext {
-  background-image: url(/images//arrow.png);
+html body main .buttonContainer .gliderNext {
+  background-image: url(/images/arrow.png);
+}
+html body main .recipesContainer {
+  background-color: #fff8f2;
+  margin-top: 21rem;
+}
+html body main .recipesContainer .container {
+  width: auto;
+  margin-left: clamp(5%, calc((100vw - 128rem) / 2), 31.15rem);
+  position: relative;
+  top: -6rem;
 }
 html body main .popularRecipes .container .headingContainerForPopularRecipes {
   display: flex;
@@ -219,15 +236,15 @@ html body main .popularRecipes .container .popularRecipesContainer {
 html body main .popularRecipes .container .popularRecipesContainer ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10rem 2rem;
+  justify-content: center;
+  gap: 10rem 3%;
 }
 html body main .popularRecipes .container .popularRecipesContainer ul li {
   margin-right: 0;
   max-width: 30%;
 }
 html body main .subscribeToBlog {
-  background-color: #FFF8F2;
+  background-color: #fff8f2;
   padding: 9rem 0;
 }
 html body main .subscribeToBlog .container {
@@ -243,7 +260,7 @@ html body main .author .container {
   align-items: center;
 }
 html body main .author .container picture {
-  margin-right: clamp(3rem, 10vw,9.6rem);
+  margin-right: clamp(3rem, 10vw, 9.6rem);
   max-width: auto;
 }
 html body main .author .container picture img {
@@ -258,14 +275,146 @@ html body main .author .container div h1 {
   margin-bottom: 1rem;
 }
 html body main .author .container div .subtext {
-  color: #9FA1AA;
+  color: #9fa1aa;
 }
 html body main .author .container div p {
   margin-top: 3rem;
 }
+html body main .intro .container {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+html body main .intro .container picture {
+  width: 100%;
+}
+html body main .intro .container picture img {
+  width: 100%;
+}
+html body main .intro .container div span {
+  display: block;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: #595c69;
+  font-weight: 600;
+}
+html body main .intro .container div .infoAboutMeal {
+  margin-top: 10rem;
+}
+html body main .intro .container div .icons {
+  align-items: center;
+  margin: 3rem 0;
+}
+html body main .intro .container div .icons::before {
+  vertical-align: middle;
+  display: inline-block;
+  content: "";
+  margin-right: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 2rem;
+}
+html body main .intro .container div .portion::before {
+  background-image: url(/images/spoon.png);
+}
+html body main .intro .container div .preparation::before {
+  background-image: url(/images/apron.png);
+}
+html body main .intro .container div .cooking::before {
+  background-image: url(/images/cooking.png);
+}
+html body main .recipeItself {
+  background-color: #fff8f2;
+}
+html body main .recipeItself .container {
+  padding: 7.6rem 0;
+  font-weight: 600;
+  color: #595c69;
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+html body main .recipeItself .container picture {
+  width: 100%;
+}
+html body main .recipeItself .container picture img {
+  width: 100%;
+}
+html body main .recipeItself .container div {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+html body main .recipeItself .container div div {
+  display: inline-block;
+}
+html body main .recipeItself .container div div ul li {
+  max-width: 100%;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: #9fa1aa;
+  margin: 2.5rem 0;
+  color: #595c69;
+}
+html body main .prepareFood .container .instructions {
+  font-weight: 600;
+  color: #595c69;
+}
+html body main .prepareFood .container .instructions h2 {
+  margin-bottom: 2.5rem;
+}
+html body main .prepareFood .container .instructions ol li {
+  max-width: 100%;
+  margin: 0 0 4rem;
+  line-height: 3rem;
+  list-style: decimal;
+  margin-left: 2rem;
+}
+html body main .prepareFood .container .instructions ol li::marker {
+  font-size: 1.8rem;
+}
+html body main .prepareFood .container .instructions ol li p {
+  margin-left: 1.4rem;
+}
+html body main .suggestions {
+  background-color: transparent;
+}
+html body main .suggestions .container {
+  width: auto;
+  margin-left: clamp(5%, calc((100vw - 128rem) / 2), 31.15rem);
+}
+html body main .suggestions .container h1 {
+  margin-bottom: 6rem;
+}
+html body main .container .pagination {
+  margin-top: 14rem;
+}
+html body main .container .pagination ul {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem,10%, 4rem);
+}
+html body main .container .pagination ul li {
+  margin: 0;
+}
+html body main .container .pagination ul li a:hover {
+  color: #ffbf9d;
+}
+html body main .container .pagination ul .nextPage::after {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-image: url(/images/arrowSmall.png);
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  margin-left: 0.5rem;
+}
 html body footer {
   font-size: 1.2rem;
-  color: #9FA1AA;
+  color: #9fa1aa;
   font-weight: 600;
   padding: 4.2rem 0;
 }
@@ -357,7 +506,7 @@ html body footer .container .socials span {
   html body header .headerElementsContainer nav ul li a {
     display: block;
     padding: 1rem 0;
-    color: #595C69;
+    color: #595c69;
     font-size: 1.8rem;
   }
   html body header .headerElementsContainer .isOpen {
@@ -385,7 +534,7 @@ html body footer .container .socials span {
     margin-top: 6rem;
   }
   html body main .popularRecipes .container .popularRecipesContainer ul {
-    gap: 4rem 0;
+    gap: 4rem auto;
   }
   html body main .popularRecipes .container .popularRecipesContainer ul li {
     max-width: 45%;
@@ -422,10 +571,45 @@ html body footer .container .socials span {
     margin-bottom: 1rem;
   }
   html body main .author .container div .subtext {
-    color: #9FA1AA;
+    color: #9fa1aa;
   }
   html body main .author .container div p {
     margin-top: 3rem;
+  }
+  html body .intro .container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  html body .intro .container picture {
+    width: 100%;
+  }
+  html body .intro .container picture img {
+    width: 100%;
+  }
+  html body .intro .container div {
+    text-align: center;
+  }
+  html body .intro .container div ul {
+    text-align: center;
+  }
+  html body .recipeItself {
+    background-color: #fff8f2;
+  }
+  html body .recipeItself .container {
+    padding: 7.6rem 0;
+    font-weight: 600;
+    color: #595c69;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+  }
+  html body .recipeItself .container picture {
+    width: 100%;
+  }
+  html body .recipeItself .container picture img {
+    width: 100%;
   }
   html body footer .container {
     flex-direction: column;
